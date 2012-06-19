@@ -31,7 +31,9 @@ jQuery.prototype.inject = function(a){
 						break;
 					case '.':
 						attribute = 'class';
-						dom_objects[dom_objects.length-1][attribute]+=' ';
+						if(dom_objects[dom_objects.length-1]['class'].length>0){
+							dom_objects[dom_objects.length-1]['class']=dom_objects[dom_objects.length-1]['class']+' ';
+						}
 						break;
 					case '[':
 						attribute = 'class';
