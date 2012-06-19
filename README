@@ -1,0 +1,9 @@
+jquery.inject is a plugin for avoiding ugly, unreadable HTML injections
+
+The old way:
+$('body').append('<div id="header" class="wrapped"></div><div id="main" class="wrapped"><span class="title"></span></div>');
+
+The new way:
+var body = $('body');
+body.inject(['div#header.wrapped','#main.wrapped']);
+body.main.inject('span.title');
