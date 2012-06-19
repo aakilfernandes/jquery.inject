@@ -34,8 +34,6 @@ jQuery.prototype.inject = function(a){
 						if(dom_objects[dom_objects.length-1].hasOwnProperty('class')){
 							dom_objects[dom_objects.length-1]['class']=dom_objects[dom_objects.length-1]['class']+'&nbsp;';
 						}
-						console.log(z);
-						console.log(dom_objects[dom_objects.length-1]['class']);
 						break;
 					case '[':
 						attribute = 'class';
@@ -78,12 +76,15 @@ jQuery.prototype.inject = function(a){
 		}
 		
 		while(value.indexOf('&nbsp;')>=0){
-			console.log(value);
-			console.log(value.indexOf('&nbsp;'));
 			value = value.replace('&nbsp;',' ')	
 		}
 		
+		if(selector.indexOf('&nbsp;')>=0){
+			selector = selector.substring(0,selector.indexOf('&nbsp;'));
+		}
+		
 		this.append('<'+dom_object.type+' '+attributes_string+'></'+dom_object.type+'>')
+		console.log('this.'+selector+'=this.children().last()');
 		eval('this.'+selector+'=this.children().last()');
 	}
 }
