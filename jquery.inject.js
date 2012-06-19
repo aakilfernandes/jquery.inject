@@ -31,9 +31,11 @@ jQuery.prototype.inject = function(a){
 						break;
 					case '.':
 						attribute = 'class';
-						if(dom_objects[dom_objects.length-1]['class'].length>0){
-							dom_objects[dom_objects.length-1]['class']=dom_objects[dom_objects.length-1]['class']+' ';
+						if(dom_objects[dom_objects.length-1].hasOwnProperty('class')){
+							dom_objects[dom_objects.length-1]['class']=dom_objects[dom_objects.length-1]['class']+'&nbsp;';
 						}
+						console.log(z);
+						console.log(dom_objects[dom_objects.length-1]['class']);
 						break;
 					case '[':
 						attribute = 'class';
@@ -58,8 +60,7 @@ jQuery.prototype.inject = function(a){
 		
 		for(var j=0;j<dom_object.attributes.length;j++){
 			var attribute = dom_object.attributes[j];
-			var value = eval('dom_object.'+attribute);
-			
+			var value = eval('dom_object.'+attribute);			
 			
 			switch(attribute){
 				case 'type':
@@ -74,6 +75,12 @@ jQuery.prototype.inject = function(a){
 					attributes_string=attributes_string+attribute+'="'+value+'" ';
 					break;
 			}
+		}
+		
+		while(value.indexOf('&nbsp;')>=0){
+			console.log(value);
+			console.log(value.indexOf('&nbsp;'));
+			value = value.replace('&nbsp;',' ')	
 		}
 		
 		this.append('<'+dom_object.type+' '+attributes_string+'></'+dom_object.type+'>')
