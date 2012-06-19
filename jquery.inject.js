@@ -84,7 +84,6 @@ jQuery.prototype.inject = function(a){
 		}
 		
 		this.append('<'+dom_object.type+' '+attributes_string+'></'+dom_object.type+'>')
-		console.log('this.'+selector+'=this.children().last()');
 		eval('this.'+selector+'=this.children().last()');
 	}
 }
