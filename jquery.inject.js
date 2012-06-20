@@ -75,8 +75,8 @@ jQuery.prototype.inject = function(a){
 			}
 		}
 		
-		while(value.indexOf('&nbsp;')>=0){
-			value = value.replace('&nbsp;',' ')	
+		while(attributes_string.indexOf('&nbsp;')>=0){
+			attributes_string = attributes_string.replace('&nbsp;',' ')	
 		}
 		
 		if(selector.indexOf('&nbsp;')>=0){
