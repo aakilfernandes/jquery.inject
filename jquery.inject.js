@@ -61,8 +61,6 @@ jQuery.prototype.inject = function(a,prepend){
 			var value = eval(dom_object[attribute]);			
 			
 			switch(attribute){
-				case 'type':
-					break;
 				case 'selector':
 					selector = attribute;
 					break;
