@@ -58,7 +58,7 @@ jQuery.prototype.inject = function(a,prepend){
 		
 		for(var j=0;j<dom_object.attributes.length;j++){
 			var attribute = dom_object.attributes[j];
-			var value = eval('dom_object.'+attribute);			
+			var value = eval(dom_object[attribute]);			
 			
 			switch(attribute){
 				case 'type':
@@ -88,6 +88,6 @@ jQuery.prototype.inject = function(a,prepend){
 		}else{
 			this.append('<'+dom_object.type+' '+attributes_string+'></'+dom_object.type+'>')	
 		}
-		eval('this.'+selector+'=this.children().last()');
+		this[selector]=this.children().last();
 	}
 }
