@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="jquery.inject : A jQuery plugin that allows easy HTML DOM objects injections without bulky selectors and annoying append()s." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>jquery.inject</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/aakilfernandes/jquery.inject">View on GitHub</a>
+
+          <h1 id="project_title">jquery.inject</h1>
+          <h2 id="project_tagline">A jQuery plugin that allows easy HTML DOM objects injections without bulky selectors and annoying append()s.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/aakilfernandes/jquery.inject/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/aakilfernandes/jquery.inject/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>jquery.inject is a plugin for avoiding ugly, unreadable  HTML DOM object injections</p>
+
+<p>The old way:</p>
+
+<div class="highlight">
+<pre><span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">'&lt;div id="header" class="wrapped"&gt;&lt;/div&gt;'</span><span class="p">);</span><span class="err">`</span>
+</pre>
+</div>
+
+
+<p>The new way:</p>
+
+<div class="highlight">
+<pre><span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">);</span>
+<span class="nx">body</span><span class="p">.</span><span class="nx">inject</span><span class="p">(</span><span class="s1">'div#header.wrapped'</span><span class="p">);</span>
+</pre>
+</div>
+
+
+<p>You can even pass in an array</p>
+
+<div class="highlight">
+<pre><span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">);</span>
+<span class="nx">body</span><span class="p">.</span><span class="nx">inject</span><span class="p">([</span><span class="s1">'div#header.wrapped'</span><span class="p">,</span><span class="s1">'div#main.wrapped'</span><span class="p">]);</span>
+</pre>
+</div>
+
+
+<p>Injections automatically create a tree that can be easily traverse. Object names are dynamically created from the first given attribute ('id' or 'class').</p>
+
+<div class="highlight">
+<pre><span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">);</span>
+<span class="nx">body</span><span class="p">.</span><span class="nx">inject</span><span class="p">([</span><span class="s1">'div#header.wrapped'</span><span class="p">,</span><span class="s1">'div#main.wrapped'</span><span class="p">]);</span>
+<span class="c1">//Automatically creates body.header and body.main</span>
+<span class="nx">body</span><span class="p">.</span><span class="nx">header</span><span class="p">.</span><span class="nx">inject</span><span class="p">(</span><span class="s1">'span.title'</span><span class="p">);</span>
+<span class="nx">body</span><span class="p">.</span><span class="nx">main</span><span class="p">.</span><span class="nx">inject</span><span class="p">(</span><span class="s1">'div.left'</span><span class="p">);</span>
+<span class="nx">body</span><span class="p">.</span><span class="nx">main</span><span class="p">.</span><span class="nx">inject</span><span class="p">(</span><span class="s1">'div.right'</span><span class="p">);</span>
+</pre>
+</div>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">jquery.inject maintained by <a href="https://github.com/aakilfernandes">aakilfernandes</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-32742952-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
