@@ -79,8 +79,8 @@ jQuery.prototype.inject = function(a){
 			attributes_string = attributes_string.replace('&nbsp;',' ')	
 		}
 		
-		if(selector.indexOf('&nbsp;')>=0){
-			selector = selector.substring(0,selector.indexOf('&nbsp;'));
+		while(value.indexOf('&nbsp;')>=0){
+			value = value.replace('&nbsp;',' ')	
 		}
 		
 		this.append('<'+dom_object.type+' '+attributes_string+'></'+dom_object.type+'>')	
