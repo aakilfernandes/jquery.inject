@@ -58,7 +58,9 @@ jQuery.prototype.inject = function(a){
 		
 		for(var j=0;j<dom_object.attributes.length;j++){
 			var attribute = dom_object.attributes[j];
-			var value = eval('dom_object.'+attribute);			
+			console.log('dom_object.'+attribute);
+			var value = eval('dom_object.'+attribute);
+			console.log(value);			
 			
 			switch(attribute){
 				case 'selector':
@@ -80,7 +82,7 @@ jQuery.prototype.inject = function(a){
 		if(selector.indexOf('&nbsp;')>=0){
 			selector = selector.substring(0,selector.indexOf('&nbsp;'));
 		}
-		
+		console.log('<'+dom_object.type+' '+attributes_string+'></'+dom_object.type+'>');
 		this.append('<'+dom_object.type+' '+attributes_string+'></'+dom_object.type+'>')	
 
 		eval('this.'+selector+'=this.children().last()');
