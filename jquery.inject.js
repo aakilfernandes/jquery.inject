@@ -66,6 +66,8 @@ jQuery.prototype.inject = function(a){
 				case 'selector':
 					selector = attribute;
 					break;
+				case 'type':
+					break;
 				default:
 					if(selector==null){
 						selector = value;
