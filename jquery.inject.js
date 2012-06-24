@@ -79,13 +79,13 @@ jQuery.prototype.inject = function(a){
 			attributes_string = attributes_string.replace('&nbsp;',' ')	
 		}
 		
-		while(value.indexOf('&nbsp;')>=0){
-			value = value.replace('&nbsp;',' ')	
+		while(selector.indexOf('&nbsp;')>=0){
+			selector = selector.replace('&nbsp;',' ')	
 		}
 		
 		this.append('<'+dom_object.type+' '+attributes_string+'></'+dom_object.type+'>')	
 		
-		console.log('this.'+value+'=this.children().last()');
-		eval('this.'+value+'=this.children().last()');
+		console.log('this.'+selector+'=this.children().last()');
+		eval('this.'+selector+'=this.children().last()');
 	}
 }
