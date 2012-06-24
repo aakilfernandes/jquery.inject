@@ -1,4 +1,4 @@
-jQuery.prototype.inject = function(a,prepend){
+jQuery.prototype.inject = function(a){
 	var indicators = ['#','.','['];
 	var dom_objects = [];
 	
@@ -81,11 +81,8 @@ jQuery.prototype.inject = function(a,prepend){
 			selector = selector.substring(0,selector.indexOf('&nbsp;'));
 		}
 		
-		if(prepend==true){
-			this.prepend('<'+dom_object.type+' '+attributes_string+'></'+dom_object.type+'>')	
-		}else{
-			this.append('<'+dom_object.type+' '+attributes_string+'></'+dom_object.type+'>')	
-		}
+		this.append('<'+dom_object.type+' '+attributes_string+'></'+dom_object.type+'>')	
+
 		eval('this.'+selector+'=this.children().last()');
 	}
 }
