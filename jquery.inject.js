@@ -58,9 +58,7 @@ jQuery.prototype.inject = function(a){
 		
 		for(var j=0;j<dom_object.attributes.length;j++){
 			var attribute = dom_object.attributes[j];
-			console.log('dom_object.'+attribute);
-			var value = eval('dom_object.'+attribute);
-			console.log(value);			
+			var value = dom_object[attribute];
 			
 			switch(attribute){
 				case 'selector':
