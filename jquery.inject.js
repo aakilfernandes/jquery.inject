@@ -114,6 +114,6 @@ jQuery.prototype.inject = function(a){
 }
 
 jQuery.prototype.gift = function(key,value){
-	this.key=value;
+	this[key]=value;
 	return this;
 }
