@@ -1,4 +1,8 @@
 jQuery.prototype.inject = function(a){
+	Object.prototype.hasOwnProperty = function(property) {
+	    return this[property] !== undefined;
+	};
+	
 	var indicators = ['#','.','['];
 	var dom_objects = [];
 	
@@ -88,6 +92,21 @@ jQuery.prototype.inject = function(a){
 		
 		this[selector]=this.children().last();
 		this[selector].papa = this;
+		
+		if(!this.hasOwnProperty('kids')){
+			this.kids={};
+		}
+		
+		if(!this.kids.hasOwnProperty(selector)){
+			this.kids[selector] = this[selector];
+		}else{
+			var i=1; var kids_selector = selector;
+			while(this.kids.hasOwnProperty(kids_selector)){
+				kids_selector = selector+'_'+i;
+			}
+			this.kids[kids_selector] = this[selector];
+		}
+		
 	}
 	
 	return this[selector];
