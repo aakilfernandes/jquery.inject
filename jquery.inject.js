@@ -100,6 +100,12 @@ jQuery.prototype.inject = function(a){
 		
 		if(!this.kids.hasOwnProperty(selector)){
 			this.kids[selector] = [this[selector]];
+			this.eachKid = function(selector,func){
+				for(i=0;i<this.kids[selector].length;i++){
+					var kid = this.kids[selector][i];
+					func(kid);
+				}
+			} 
 		}else{
 			this.kids[selector].push(this[selector])
 		}
