@@ -94,7 +94,7 @@ jQuery.prototype.inject = function(a){
 		this[selector].papa = this;
 		
 		if(!this.hasOwnProperty('kids')){
-			this.kids={};
+			this.kids=[];
 		}
 		
 		if(!this.kids.hasOwnProperty(selector)){
