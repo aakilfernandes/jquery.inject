@@ -89,5 +89,6 @@ jQuery.prototype.inject = function(a){
 		
 		//eval('this.'+selector+'=this.children().last()');
 		this[selector]=this.children().last();
+		return this[selector];
 	}
 }
