@@ -90,5 +90,5 @@ jQuery.prototype.inject = function(a){
 		
 		this[selector]=this.children().last();
 	}
-	return this;
+	return this[selector];
 }
