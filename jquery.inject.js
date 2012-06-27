@@ -92,6 +92,7 @@ jQuery.prototype.inject = function(a){
 		
 		this[selector]=this.children().last();
 		this[selector].papa = this;
+		this[selector][0].wrap = this[selector];
 		
 		if(!this.hasOwnProperty('kids')){
 			this.kids={};
