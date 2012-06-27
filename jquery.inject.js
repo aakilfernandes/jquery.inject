@@ -98,14 +98,9 @@ jQuery.prototype.inject = function(a){
 		}
 		
 		if(!this.kids.hasOwnProperty(selector)){
-			this.kids[selector] = this[selector];
+			this.kids[selector] = [this[selector]];
 		}else{
-			var i=1; var kids_selector = selector;
-			while(this.kids.hasOwnProperty(kids_selector)){
-				kids_selector = selector+'_'+i;
-				i++
-			}
-			this.kids[kids_selector] = this[selector];
+			this.kids[selector].push(this[selector])
 		}
 		
 	}
