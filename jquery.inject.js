@@ -87,6 +87,8 @@ jQuery.prototype.inject = function(a){
 		this.append('<'+dom_object.type+' '+attributes_string+'></'+dom_object.type+'>')	
 		
 		this[selector]=this.children().last();
+		this[selector].parent = this;
 	}
+	
 	return this[selector];
 }
