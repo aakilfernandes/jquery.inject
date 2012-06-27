@@ -103,6 +103,7 @@ jQuery.prototype.inject = function(a){
 			var i=1; var kids_selector = selector;
 			while(this.kids.hasOwnProperty(kids_selector)){
 				kids_selector = selector+'_'+i;
+				i++
 			}
 			this.kids[kids_selector] = this[selector];
 		}
