@@ -1,4 +1,5 @@
 jQuery.prototype.inject = function(a){
+	/*
 	Object.prototype.hasOwnProperty = function(property) {
 	    return this[property] !== undefined;
 	};
@@ -93,7 +94,7 @@ jQuery.prototype.inject = function(a){
 		this[selector]=this.children().last();
 		this[selector].papa = this;
 		this[selector][0].wrap = this[selector];
-		/*
+		
 		if(!this.hasOwnProperty('kids')){
 			this.kids={};
 		}
@@ -109,11 +110,12 @@ jQuery.prototype.inject = function(a){
 		}else{
 			this.kids[selector].push(this[selector])
 		}
-		*/
+		
 		
 	}
 	
 	return this[selector];
+	*/
 }
 
 jQuery.prototype.gift = function(key,value){
