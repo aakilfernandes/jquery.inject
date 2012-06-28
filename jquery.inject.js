@@ -93,7 +93,7 @@ jQuery.prototype.inject = function(a){
 		this[selector]=this.children().last();
 		this[selector].papa = this;
 		this[selector][0].wrap = this[selector];
-		
+		/*
 		if(!this.hasOwnProperty('kids')){
 			this.kids={};
 		}
@@ -109,6 +109,7 @@ jQuery.prototype.inject = function(a){
 		}else{
 			this.kids[selector].push(this[selector])
 		}
+		*/
 		
 	}
 	
