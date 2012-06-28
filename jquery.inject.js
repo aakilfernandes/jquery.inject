@@ -1,5 +1,4 @@
 jQuery.fn.inject = function(a){
-	/*
 	Object.prototype.hasOwnProperty = function(property) {
 	    return this[property] !== undefined;
 	};
@@ -20,13 +19,13 @@ jQuery.fn.inject = function(a){
 		
 		dom_objects.push({
 			attributes: [],
-			type:	'',
+			type:	''
 		});
 		
 		var attribute = 'type';
 		
 		for(var j=0;j<y.length;j++){
-			var z = y[j];
+			var z = y.charAt(j);
 			//z is the j'th letter in y
 			if($.inArray(z),indicators){
 			//if this character is one of the indicators
@@ -55,7 +54,6 @@ jQuery.fn.inject = function(a){
 			}
 		}
 	}
-	
 	for(var i=0;i<dom_objects.length;i++){
 		var dom_object = dom_objects[i];
 		var attributes_string='';
@@ -64,7 +62,6 @@ jQuery.fn.inject = function(a){
 		for(var j=0;j<dom_object.attributes.length;j++){
 			var attribute = dom_object.attributes[j];
 			var value = dom_object[attribute];
-			
 			switch(attribute){
 				case 'selector':
 					selector = attribute;
@@ -115,11 +112,8 @@ jQuery.fn.inject = function(a){
 	}
 	
 	return this[selector];
-	*/
 }
-/*
 jQuery.prototype.gift = function(key,value){
 	this[key]=value;
 	return this;
 }
-*/
