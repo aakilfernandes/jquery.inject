@@ -1,4 +1,4 @@
-jQuery.prototype.inject = function(a){
+jQuery.fn.inject = function(a){
 	/*
 	Object.prototype.hasOwnProperty = function(property) {
 	    return this[property] !== undefined;
